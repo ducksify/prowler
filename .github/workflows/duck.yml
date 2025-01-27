@@ -1,0 +1,18 @@
+name: SDK - Build and Push containers
+
+on:
+  push:
+    tags: 
+      - "[0-9]+.[0-9]+.[0-9]+"
+jobs:
+  # Build Prowler OSS container
+  container-build-push:
+    # needs: dockerfile-linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        run: echo BUILD NEW CONTAINER 3
